@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   </head>
   <body>
-    <script src="auth.js"></script>
+    <script src="auth.js" type="module"></script>
+    <script type="module" src="initfb.js"></script>
+
     <div class="container">
       <div class="wrapper">
         <div class="title"><span>Criar conta</span></div>
         <form action="#">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Email" required>
+            <input type="text" placeholder="Email" required id="email-sign">
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
@@ -27,7 +29,7 @@
             <input type="password" placeholder="Confirmar senha" required id="senha2">
           </div>
           <div class="row button">
-            <input type="submit" value="Criar" onclick="testarSenha()">
+            <input type="submit" value="Criar" id="submit">
           </div>
       
         </form>
