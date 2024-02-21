@@ -119,3 +119,10 @@ form .signup-link a:hover{
 :hover #googlebtn{
     cursor: pointer;
 }
+
+.logo{
+  width: 50%;
+  position: relative;
+  left: 25%;
+
+}

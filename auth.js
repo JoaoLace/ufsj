@@ -31,6 +31,8 @@ document.getElementById("submit").addEventListener("click", function () {
         createUserWithEmailAndPassword(auth, email, senha1)
             .then(() => {
                 // esconderCarregamento(); // Certifique-se de definir ou remover esta função
+        location.reload()
+                
                 window.location.href = "index.html";
             })
             .catch((error) => {

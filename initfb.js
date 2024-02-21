@@ -45,7 +45,9 @@ if (document.getElementById("btn")) {
 if (document.getElementById("googlebtn")) {
   document.getElementById("googlebtn").addEventListener("click", (e) => {
     signInWithPopup(auth, googleProvider)
+    
       .then((result) => {
+        location.reload()
         // Código para autenticação com o Google
         // O usuário será redirecionado automaticamente quando autenticado com sucesso
         const confirmRedirect = confirm("Login bem-sucedido com o Google. Deseja ir para a página principal?");

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 15px 15px 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .content {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 50px; /* Ajustado para a direita */
+            margin-left: 10px; /* Margem para a direita */
+        }
+
+        .sidebar a.submenu-trigger {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .submenu a {
+            padding: 10px 0;
+            display: block;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#" class="submenu-trigger" onclick="toggleSubmenu(1)">
+            <span class="arrow">&#9654;</span>  Doença 1
+        </a>
+        <div class="submenu" id="submenu1">
+            <a href="#">  <span class="dot"></span>Tratamento</a>
+            <a href="#">  <span class="dot"></span>Ajuda Médica</a>
+            <a href="#">  <span class="dot"></span>Marcar Consulta</a>
+        </div>
+        <a href="#" class="submenu-trigger" onclick="toggleSubmenu(2)">
+            <span class="arrow">&#9654;</span> Doença 2
+        </a>
+        <div class="submenu" id="submenu2">
+            <a href="#">  <span class="dot"></span>Tratamento</a>
+            <a href="#">  <span class="dot"></span>Ajuda Médica</a>
+            <a href="#">  <span class="dot"></span>Marcar Consulta</a>
+        </div>
+        <a href="#" class="submenu-trigger" onclick="toggleSubmenu(3)">
+            <span class="arrow">&#9654;</span> Doença 3
+        </a>
+        <div class="submenu" id="submenu3">
+            <a href="#">  <span class="dot"></span>Tratamento</a>
+            <a href="#">  <span class="dot"></span>Ajuda Médica</a>
+            <a href="#">  <span class="dot"></span>Marcar Consulta</a>
+        </div>
+        <a href="#" class="submenu-trigger" onclick="toggleSubmenu(4)">
+            <span class="arrow">&#9654;</span> Doença 4
+        </a>
+        <div class="submenu" id="submenu4">
+            <a href="#">  <span class="dot"></span>Tratamento</a>
+            <a href="#">  <span class="dot"></span>Ajuda Médica</a>
+            <a href="#">  <span class="dot"></span>Marcar Consulta</a>
+        </div>
+    </div>
+
+    <div id="main" class="content">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">☰</span>
+        <h1>Em desenvolvimento :D</h1>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        function toggleSubmenu(index) {
+            var submenu = document.getElementById("submenu" + index);
+            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
