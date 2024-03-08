@@ -14,10 +14,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-// Verificar o estado de autenticação do usuário
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // O usuário está autenticado
     const confirmRedirect = confirm("Você já está logado. Deseja ir para a página principal?");
     if (confirmRedirect) {
       window.location.href = "main.html";
@@ -48,22 +46,17 @@ if (document.getElementById("googlebtn")) {
     
       .then((result) => {
         location.reload()
-        // Código para autenticação com o Google
-        // O usuário será redirecionado automaticamente quando autenticado com sucesso
+
         const confirmRedirect = confirm("Login bem-sucedido com o Google. Deseja ir para a página principal?");
         if (confirmRedirect) {
           window.location.href = "main.html";
         }
       })
       .catch((error) => {
-        // Manipular erros aqui.
         const errorCode = error.code;
         const errorMessage = error.message;
-        // O e-mail da conta do usuário utilizado.
         const email = error.customData.email;
-        // O tipo AuthCredential que foi utilizado.
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
       });
   });
 }

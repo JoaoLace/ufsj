@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
-// Inicialize o aplicativo Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyC2wzob4G4hx0WZb4OgdXC_jsIG9gDrNwM",
     authDomain: "ufsj-894af.firebaseapp.com",
@@ -13,11 +12,11 @@ const firebaseConfig = {
   };
 const firebaseApp = initializeApp(firebaseConfig);
 
-// Obtenha a instância de autenticação
 const auth = getAuth(firebaseApp);
-
+document.addEventListener("DOMContentLoaded", function () {
 if (document.getElementById("submit")){
 document.getElementById("submit").addEventListener("click", function () { 
+    event.preventDefault();
     var email = document.getElementById("email-sign").value;
     var senha1 = document.getElementById("senha1").value;
     var senha2 = document.getElementById("senha2").value;
@@ -30,15 +29,13 @@ document.getElementById("submit").addEventListener("click", function () {
     } else {
         createUserWithEmailAndPassword(auth, email, senha1)
             .then(() => {
-                // esconderCarregamento(); // Certifique-se de definir ou remover esta função
-        location.reload()
+            //location.reload()
                 
                 window.location.href = "index.html";
             })
             .catch((error) => {
-                // esconderCarregamento(); // Certifique-se de definir ou remover esta função
                 alert(error);
             });
     }
 });
-}
+} });
