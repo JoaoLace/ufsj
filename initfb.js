@@ -16,10 +16,9 @@ const googleProvider = new GoogleAuthProvider();
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    const confirmRedirect = confirm("Você já está logado. Deseja ir para a página principal?");
-    if (confirmRedirect) {
+    
       window.location.href = "main.html";
-    }
+    
   }
 });
 
@@ -30,10 +29,9 @@ if (document.getElementById("btn")) {
       document.getElementById("email").value,
       document.getElementById("senha").value
     ).then(response => {
-      const confirmRedirect = confirm("Login bem-sucedido. Deseja ir para a página principal?");
-      if (confirmRedirect) {
+   
         window.location.href = "main.html";
-      }
+      
     }).catch(error => {
       alert(error.message);
     });
